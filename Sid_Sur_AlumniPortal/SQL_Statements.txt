@@ -1,0 +1,62 @@
+drop database alumniportal;
+
+create database alumniportal;
+
+use alumniportal;
+
+create table login(studentid varchar(20), password varchar(20), role varchar(20), blocked varchar(10));
+
+create table student(studentid varchar(20), name varchar(30), dob varchar(20), yearofgrad varchar(10), currentcity varchar(20), emailaddress varchar(20), phonenum varchar(20));
+
+create table inbox(messageid varchar(20), studentid varchar(20), frm varchar(20), message varchar(5000));
+
+create table feed(postid varchar(20), post varchar(5000), studentid varchar(20));
+
+create table annoucement(annid varchar(20), post varchar(5000));
+
+create table event(eventid varchar(20), eventname varchar(100), location varchar(20), time varchar(20), date varchar(20));
+
+create table attending(eventid varchar(20), studentid varchar(20));
+
+
+
+insert into login values('admin', 'admin', 'admin', '0');
+insert into login values('sid', 'sid', 'student', '0');
+insert into login values('suruchi', 'suruchi', 'alumni', '0');
+insert into login values('archit', 'archit', 'alumni', '0');
+insert into login values('arushi', 'arushi', 'student', '0');
+insert into login values('batman', 'batman', 'student', '1');
+
+insert into student values('admin', 'Administrator', '01/01/1965', '1995', 'Bangalore', 'someadmin@gmail.com', '9740489564');
+insert into student values('sid', 'Sid', '23/06/1994', '2016', 'Bangalore', 'sahaysid@gmail.com',  '9740594884');
+insert into student values('suruchi', 'Suruchi', '22/02/1995', '2012', 'Delhi', 'suruchi@gmail.com', '9740591232');
+insert into student values('archit', 'Archit', '16/02/1994', '2015', 'Pune', 'archit@gmail.com', '9740591232');
+insert into student values('arushi', 'Arushi', '15/08/1994', '2016', 'Haryana', 'arushi@gmail.com', '9740591232');
+insert into student values('batman', 'Bruce Wayne', '29/02/1969', '2010', 'Gotham', 'batman@batman.com', '9696996969');
+
+
+insert into inbox values('100','admin','sid','Hi sid. I hope you are working properly.');
+insert into inbox values('101','sid','admin','I hope you are too.');
+insert into inbox values('102','sid','suruchi','Enough fighting');
+insert into inbox values('103','suruchi','sid','Oh shut up!');
+
+
+insert into feed values('200','Very excited and hyper to find everyone','arushi');
+insert into feed values('201','I know everything','sid');
+insert into feed values('204','I am ex-CR of batch 2016','archit');
+insert into feed values('202','I am batman!','batman');
+insert into feed values('203','Bored!','suruchi');
+
+
+insert into annoucement values('500','All the students are advised to Update their resume in the portal by 29th August, 2015.');
+insert into annoucement values('501','PLEASE NOTE: Students are advised to check the Registrations tab to confirm whether they successfully registered for a company. Any discrepancies must be brought to the Placement Offices attention immediately. (This does not apply to companies which provide external registration links)');
+
+insert into event values('1000','Light the Night','End-Point, Manipal','7:00 pm','11/11/2015');
+insert into event values('1001','Birthday Bash','UB City, Bangalore','12:00 am','22/02/2016');
+
+insert into attending values('1000','sid');
+insert into attending values('1000','arushi');
+insert into attending values('1001','suruchi');
+insert into attending values('1001','sid');
+insert into attending values('1001','arushi');
+

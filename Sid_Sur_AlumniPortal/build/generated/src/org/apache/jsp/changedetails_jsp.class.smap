@@ -1,0 +1,14 @@
+SMAP
+changedetails_jsp.java
+JSP
+*S JSP
+*F
++ 0 changedetails.jsp
+changedetails.jsp
+*L
+1,83:44
+84:127,3
+85,4:130
+89:134,3
+90,39:137
+*E
