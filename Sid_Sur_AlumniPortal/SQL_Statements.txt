@@ -1,5 +1,10 @@
 drop database alumniportal;
 
+
+
+
+
+
 create database alumniportal;
 
 use alumniportal;
